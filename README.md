@@ -32,7 +32,7 @@ npm run start
 #### Superadmin
 
 ```
-username : superadmin@email.com
+email    : superadmin@email.com
 password : superadmin
 ```
 ## Documentation
