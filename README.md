@@ -24,6 +24,10 @@ Seeders sudah tersedia dan dapat di cek pada directory `./seeders`
 ```bash
   npm run db:seed-all
 ```
+## Run the server
+```
+npm run start
+```
 ## Auth
 #### Superadmin
 
