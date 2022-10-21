@@ -1,0 +1,497 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Challenge 6 - Auth",
+    "contact": {
+      "name"  :"Adam Satria A.",
+      "email" :"adam.satria.armansyah@gmail.com"},
+    "version": "1.0",
+    "description" :"Open API Documentation untuk Binar Academy FSW Challenge 6, adasdas","asds"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:5000/v1/api"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Auth"
+    },
+    {
+      "name": "Cars"
+    }
+  ],
+  "paths": {
+    "/register": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Register",
+        "operationId": "Register",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        },
+        "deprecated": false,
+        "x-codegen-request-body-name": "Body"
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Login",
+        "operationId": "Login",
+        "description" : "Copy token yang didapat ke menu Authorize",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        },
+        "deprecated": false,
+        "x-codegen-request-body-name": "Body"
+      }
+    },
+    "/adminreg": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Admin Register",
+        "operationId": "AdminRegister",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdminRegisterRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        },
+        "deprecated": false,
+        "x-codegen-request-body-name": "Body",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/whois": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Who Is",
+        "operationId": "WhoIs",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/users": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Get All User",
+        "operationId": "GetAllUser",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/logout": {
+      "delete": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Logout",
+        "operationId": "Logout",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/cars": {
+      "get": {
+        "tags": [
+          "Cars"
+        ],
+        "summary": "Get All Cars",
+        "operationId": "GetAllCars",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Cars"
+        ],
+        "summary": "Create Cars",
+        "operationId": "CreateCars",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCarsRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        },
+        "deprecated": false,
+        "x-codegen-request-body-name": "Body",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/cars/{id}": {
+      "get": {
+        "tags": [
+          "Cars"
+        ],
+        "summary": "Get Cars By Id",
+        "operationId": "GetCarsById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/cars/all": {
+      "get": {
+        "tags": [
+          "Cars"
+        ],
+        "summary": "Get All Cars (Include soft-deleted)",
+        "operationId": "GetAllCars(Includesoft-deleted)",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/cars/{id}/edit": {
+      "put": {
+        "tags": [
+          "Cars"
+        ],
+        "summary": "Update Cars",
+        "operationId": "UpdateCars",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateCarsRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        },
+        "deprecated": false,
+        "x-codegen-request-body-name": "Body",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/cars/{id}/delete": {
+      "delete": {
+        "tags": [
+          "Cars"
+        ],
+        "summary": "Delete Cars",
+        "operationId": "DeleteCars",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    },
+    "schemas": {
+      "AdminRegisterRequest": {
+        "title": "AdminRegisterRequest",
+        "required": [
+          "email",
+          "name",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "name": "admin",
+          "email": "admin@email.com",
+          "password": "admin"
+        }
+      },
+      "RegisterRequest": {
+        "title": "RegisterRequest",
+        "required": [
+          "email",
+          "name",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "name": "member",
+          "email": "member@email.com",
+          "password": "member"
+        }
+      },
+      "LoginRequest": {
+        "title": "LoginRequest",
+        "required": [
+          "email",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "email": "superadmin@email.com",
+          "password": "superadmin"
+        }
+      },
+      "CreateCarsRequest": {
+        "title": "CreateCarsRequest",
+        "required": [
+          "capacity",
+          "description",
+          "img",
+          "name",
+          "rent"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "capacity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": {
+            "type": "string"
+          },
+          "rent": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "img": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "name": "Toyota Innova",
+          "capacity": 7,
+          "description": "Mobil Keluarga dengan Kenyamanan nomor 1",
+          "rent": 150000,
+          "img": "imagetest.png"
+        }
+      },
+      "UpdateCarsRequest": {
+        "title": "UpdateCarsRequest",
+        "required": [
+          "capacity",
+          "description",
+          "img",
+          "name",
+          "rent"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "capacity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": {
+            "type": "string"
+          },
+          "rent": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "img": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "name": "Toyota Innova",
+          "capacity": 7,
+          "description": "Mobil Keluarga dengan Kenyamanan nomor 1",
+          "rent": 150000,
+          "img": "imagetest.png"
+        }
+      }
+    }
+  }
+}
