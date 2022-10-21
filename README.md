@@ -5,7 +5,7 @@ REST API yang dapat digunakan untuk melakukan manajemen data mobil dengan fitur 
 
 
 
-## Do this first.
+## DB Management.
 
 #### 1. Create the Database
 Sesuaikan configuration database pada file `config.json` pada directory `./config`
