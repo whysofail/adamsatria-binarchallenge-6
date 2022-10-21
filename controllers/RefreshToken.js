@@ -1,6 +1,7 @@
-import * as Users from "../models/users.js";
+import db from "../models/index.js"
 import jwt from "jsonwebtoken";
- 
+
+const Users = db.Users
 export const refreshToken = async(req, res) => {
     try {
         const refreshToken = req.cookies.refreshToken;
