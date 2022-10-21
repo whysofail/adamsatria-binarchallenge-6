@@ -6,7 +6,7 @@
       "name"  :"Adam Satria A.",
       "email" :"adam.satria.armansyah@gmail.com"},
     "version": "1.0",
-    "description" :"Open API Documentation untuk Binar Academy FSW Challenge 6"
+    "description": "Ini adalah Open API Documentation yang dibuat untuk menyelesaikan Binar Academy FSW Challenge Chapter 6.  \n\n  \nUntuk Authorization pada Endpoint yang ada, lakukan Login kemudian copy AcessToken ke Menu Authorize.  \n\n\nSome useful links:\n- [Link Repository API](https://github.com/whysofail/adamsatria-binarchallenge-6)"
   },
   "servers": [
     {
