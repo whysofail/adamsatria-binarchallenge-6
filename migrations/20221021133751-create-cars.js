@@ -24,8 +24,20 @@ module.exports = {
       img: {
         type: Sequelize.STRING
       },
-      actionByUserId: {
+      createdBy: {
         type: Sequelize.INTEGER
+      },
+      updatedBy: {
+        type: Sequelize.INTEGER
+      },
+      deletedBy: {
+        type: Sequelize.INTEGER
+      },
+      createdAt: {
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        type: Sequelize.DATE
       },
       deletedAt: {
         type: Sequelize.DATE

@@ -104,7 +104,7 @@ export const CurrentUser = async(req, res) => {
         const currentUser = req.user;
         res.status(200).json(currentUser)
     } catch (error) {
-        console.log(error)
+        res.json({msg : "Invalid Login Credentials"});
     }
     
 }

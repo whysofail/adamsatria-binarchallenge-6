@@ -137,6 +137,7 @@
         ],
         "summary": "Get All User",
         "operationId": "GetAllUser",
+        "description": "Untuk melihat login credentials yang tersedia", 
         "responses": {
           "200": {
             "description": "",

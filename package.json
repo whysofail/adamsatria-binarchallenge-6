@@ -4,12 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "babel src -d lib",
-    "test": "nodemon --exec babel-node app.js",
     "start": "nodemon app.js",
     "db:create": "npx sequelize-cli db:create",
     "db:model-users": "npx sequelize-cli model:generate --name Users --attributes name:string,email:string,password:string,roles:string,refresh_token:text",
-    "db:model-cars": "npx sequelize-cli model:generate --name Cars --attributes name:string,capacity:integer,rent:integer,description:string,img:string,actionByUserId:integer,deletedAt:date",
+    "db:model-cars": "npx sequelize-cli model:generate --name Cars --attributes name:string,capacity:integer,rent:integer,description:string,img:string,createdBy:integer,updatedBy:integer,deletedBy:integer,createdAt:date,updatedAt:date,deletedAt:date",
     "db:seed-all": "npx sequelize-cli db:seed:all",
     "db:migrate": "npx sequelize-cli db:migrate",
     "db:undo-migrate": "npx sequelize-cli db:migrate:undo"

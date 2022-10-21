@@ -1,6 +1,6 @@
 import { Sequelize } from "sequelize";
 
-const db = new Sequelize('database_development','postgres','admin',{
+const db = new Sequelize('bcr_database','postgres','admin',{
     host : "127.0.0.1",
     port : "6600",
     dialect: "postgres",

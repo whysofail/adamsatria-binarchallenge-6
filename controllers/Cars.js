@@ -41,7 +41,7 @@ export const getCarsById = async (req, res) => {
         });
         res.status(200).json(cars);
     } catch (error) {
-        console.log(error);
+        res.json({msg : "Id not found"});
     }  
 }
 
@@ -55,8 +55,7 @@ export const createCars = async (req, res, next) => {
             rent : req.body.rent,
             img : req.file === undefined ? req.body.img : req.file.filename , 
             created : new Date(),
-            actionByUserId : userId,
-            
+            createdBy : userId
          })
          res.status(200).json({msg : "Cars Inserted.", data : cars});
         next()
@@ -76,7 +75,7 @@ export const updateCars = async(req, res) => {
             img : req.file === undefined ? req.body.img : req.file.filename,
             created : Cars.created, // Prevent 'created' fields being automatically changed.
             updated : new Date(),
-            actionByUserId : userId
+            updatedBy : userId
         }, 
         {
             where: {
@@ -85,7 +84,7 @@ export const updateCars = async(req, res) => {
         });
         res.status(200).json({msg : "Cars Updated."});
     } catch (err) {
-        console.log(err);
+        res.json({msg : "Id not found"});
     }
 }
 
@@ -93,7 +92,7 @@ export const deleteCars = async (req, res) => {
     try {
         const userId = req.user.userId;
         await Cars.update({
-            actionByUserId : userId
+            deletedBy : userId
         },
         {
             where: {
@@ -107,6 +106,6 @@ export const deleteCars = async (req, res) => {
         });
         res.status(200).json({msg : "Cars Deleted."});
     } catch (err) {
-        console.log(err);
+        res.json({msg : "Id not found"});
     }
 }

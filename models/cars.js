@@ -19,10 +19,14 @@ module.exports = (sequelize, DataTypes) => {
     rent: DataTypes.INTEGER,
     description: DataTypes.STRING,
     img: DataTypes.STRING,
-    actionByUserId: DataTypes.INTEGER,
+    createdBy: DataTypes.INTEGER,
+    updatedBy: DataTypes.INTEGER,
+    deletedBy: DataTypes.INTEGER,
+    createdAt: DataTypes.DATE,
+    updatedAt: DataTypes.DATE,
     deletedAt: DataTypes.DATE
   }, {
-    paranoid : true,
+    paranoid:true,
     sequelize,
     modelName: 'Cars',
   });
